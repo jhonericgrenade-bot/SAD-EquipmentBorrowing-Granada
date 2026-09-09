@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Equipment Borrowing Monitor</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <main id="auth-screen" class="auth-layout">
+      <section class="auth-panel">
+        <p class="eyebrow">College Equipment Office</p>
+        <h1>Equipment Borrowing Monitor</h1>
+        <p class="muted">Sign in to manage equipment, borrowing records, and returns.</p>
+        <form id="login-form" class="form-stack">
+          <label>Email<input id="login-email" type="email" autocomplete="email" required /></label>
+          <label>Password<input id="login-password" type="password" autocomplete="current-password" required /></label>
+          <button type="submit" class="button primary">Log in</button>
+        </form>
+        <p id="login-message" class="form-message" aria-live="polite"></p>
+      </section>
+    </main>
+
+    <div id="app-screen" class="app-shell hidden">
+      <aside class="sidebar">
+        <div class="brand"><span class="brand-mark">EB</span><span>Equipment Monitor</span></div>
+        <nav aria-label="Main navigation">
+          <button class="nav-link active" data-view="dashboard">Dashboard</button>
+          <button class="nav-link" data-view="equipment">Equipment</button>
+          <button class="nav-link" data-view="transactions">Transactions</button>
+        </nav>
+        <div class="sidebar-bottom"><span id="user-email" class="user-email"></span><button id="logout-button" class="button ghost">Log out</button></div>
+      </aside>
+
+      <main class="content">
+        <header class="page-header"><div><p class="eyebrow" id="page-kicker">Overview</p><h1 id="page-title">Dashboard</h1></div></header>
+
+        <section id="dashboard-view" class="view">
+          <div class="metrics">
+            <article class="metric"><span>Total Equipment</span><strong id="total-equipment">0</strong></article>
+            <article class="metric available"><span>Available</span><strong id="available-equipment">0</strong></article>
+            <article class="metric borrowed"><span>Borrowed</span><strong id="borrowed-equipment">0</strong></article>
+            <article class="metric returned"><span>Returned Transactions</span><strong id="returned-transactions">0</strong></article>
+            <article class="metric overdue"><span>Overdue</span><strong id="overdue-transactions">0</strong></article>
+          </div>
+          <section class="table-section"><div class="section-heading"><div><h2>Recent transactions</h2><p class="muted">Latest borrowing activity</p></div><button class="button secondary" data-view="transactions">View all</button></div><div id="recent-transactions" class="table-wrap"></div></section>
+        </section>
+
+        <section id="equipment-view" class="view hidden">
+          <div class="toolbar"><input id="equipment-search" type="search" placeholder="Search equipment name or asset code" /><select id="equipment-filter"><option value="All">All availability</option><option value="Available">Available</option><option value="Borrowed">Borrowed</option></select><button id="add-equipment-button" class="button primary">Add equipment</button></div>
+          <div id="equipment-table" class="table-wrap"></div>
+        </section>
+
+        <section id="transactions-view" class="view hidden">
+          <div class="toolbar"><input id="transaction-search" type="search" placeholder="Search borrower, equipment, or asset code" /><select id="transaction-filter"><option value="All">All statuses</option><option value="Borrowed">Borrowed</option><option value="Returned">Returned</option><option value="Overdue">Overdue</option></select><button id="add-transaction-button" class="button primary">New borrowing</button></div>
+          <div id="transaction-table" class="table-wrap"></div>
+        </section>
+      </main>
+    </div>
+
+    <dialog id="equipment-dialog"><form id="equipment-form" class="modal-form"><div class="modal-header"><h2 id="equipment-dialog-title">Add equipment</h2><button type="button" class="icon-button" data-close="equipment-dialog" aria-label="Close">x</button></div><input id="equipment-id" type="hidden" /><label>Equipment name<input id="equipment-name" required /></label><label>Category<input id="equipment-category" placeholder="Laptop, Projector, Camera..." required /></label><label>Asset code<input id="equipment-code" required /></label><label>Condition<select id="equipment-condition"><option>Good</option><option>Fair</option><option>For Repair</option></select></label><p id="equipment-message" class="form-message"></p><div class="modal-actions"><button type="button" class="button ghost" data-close="equipment-dialog">Cancel</button><button class="button primary" type="submit">Save equipment</button></div></form></dialog>
+
+    <dialog id="transaction-dialog"><form id="transaction-form" class="modal-form"><div class="modal-header"><h2>New borrowing transaction</h2><button type="button" class="icon-button" data-close="transaction-dialog" aria-label="Close">x</button></div><label>Borrower name<input id="borrower-name" required /></label><label>Borrower type<select id="borrower-type"><option>Student</option><option>Faculty</option><option>Staff</option></select></label><label>Department / Office<input id="borrower-department" required /></label><label>Equipment<select id="transaction-equipment" required></select></label><div class="form-grid"><label>Date borrowed<input id="date-borrowed" type="date" required /></label><label>Due date<input id="due-date" type="date" required /></label></div><p id="transaction-message" class="form-message"></p><div class="modal-actions"><button type="button" class="button ghost" data-close="transaction-dialog">Cancel</button><button class="button primary" type="submit">Save borrowing</button></div></form></dialog>
+
+    <template id="empty-state"><div class="empty-state">No records found.</div></template>
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>
