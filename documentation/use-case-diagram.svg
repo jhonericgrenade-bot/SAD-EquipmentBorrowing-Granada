@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900">
+  <style>
+    .title { font: 700 29px Arial, sans-serif; fill: #102a43; }
+    .system { font: 700 17px Arial, sans-serif; fill: #102a43; text-anchor: middle; }
+    .label { font: 16px Arial, sans-serif; fill: #102a43; text-anchor: middle; dominant-baseline: middle; }
+    .actor { font: 700 17px Arial, sans-serif; fill: #102a43; text-anchor: middle; }
+    .line { fill: none; stroke: #31566b; stroke-width: 2; }
+    .case { fill: #ffffff; stroke: #31566b; stroke-width: 1.5; }
+  </style>
+  <rect width="1400" height="900" fill="#ffffff"/>
+  <text x="55" y="58" class="title">Use Case Diagram: Equipment Borrowing and Return Monitoring System</text>
+  <rect x="355" y="90" width="990" height="750" fill="#fbfdfe" stroke="#31566b" stroke-width="2"/>
+  <text x="850" y="124" class="system">Equipment Borrowing and Return Monitoring System</text>
+
+  <circle cx="175" cy="340" r="31" class="line"/>
+  <line x1="175" y1="371" x2="175" y2="470" class="line"/><line x1="115" y1="405" x2="235" y2="405" class="line"/>
+  <line x1="175" y1="470" x2="120" y2="540" class="line"/><line x1="175" y1="470" x2="230" y2="540" class="line"/>
+  <text x="175" y="588" class="actor">System User /</text><text x="175" y="612" class="actor">Equipment Custodian</text>
+
+  <line x1="235" y1="405" x2="410" y2="405" class="line"/><line x1="410" y1="165" x2="410" y2="725" class="line"/>
+  <line x1="410" y1="165" x2="445" y2="165" class="line"/><line x1="410" y1="305" x2="445" y2="305" class="line"/><line x1="410" y1="445" x2="445" y2="445" class="line"/><line x1="410" y1="585" x2="445" y2="585" class="line"/><line x1="410" y1="725" x2="445" y2="725" class="line"/>
+  <line x1="625" y1="165" x2="750" y2="165" class="line"/><line x1="935" y1="165" x2="1060" y2="165" class="line"/>
+  <line x1="625" y1="305" x2="750" y2="305" class="line"/><line x1="935" y1="305" x2="1060" y2="305" class="line"/>
+  <line x1="625" y1="445" x2="750" y2="445" class="line"/><line x1="935" y1="445" x2="1060" y2="445" class="line"/>
+  <line x1="625" y1="585" x2="750" y2="585" class="line"/><line x1="935" y1="585" x2="1060" y2="585" class="line"/>
+
+  <g class="case">
+    <ellipse cx="535" cy="165" rx="90" ry="36"/><ellipse cx="850" cy="165" rx="100" ry="36"/><ellipse cx="1165" cy="165" rx="105" ry="36"/>
+    <ellipse cx="535" cy="305" rx="90" ry="36"/><ellipse cx="850" cy="305" rx="100" ry="36"/><ellipse cx="1165" cy="305" rx="105" ry="36"/>
+    <ellipse cx="535" cy="445" rx="90" ry="36"/><ellipse cx="850" cy="445" rx="100" ry="36"/><ellipse cx="1165" cy="445" rx="105" ry="36"/>
+    <ellipse cx="535" cy="585" rx="90" ry="36"/><ellipse cx="850" cy="585" rx="100" ry="36"/><ellipse cx="1165" cy="585" rx="105" ry="36"/>
+    <ellipse cx="535" cy="725" rx="90" ry="36"/>
+  </g>
+  <text x="535" y="165" class="label">Login</text><text x="850" y="165" class="label">View Dashboard</text><text x="1165" y="165" class="label">Add Equipment</text>
+  <text x="535" y="305" class="label">View Equipment</text><text x="850" y="305" class="label">Edit Equipment</text><text x="1165" y="305" class="label">Delete Equipment</text>
+  <text x="535" y="445" class="label">Search Equipment</text><text x="850" y="445" class="label">Record Borrowing</text><text x="1165" y="445" class="label">View Transactions</text>
+  <text x="535" y="585" class="label">Return Equipment</text><text x="850" y="585" class="label">Search Transactions</text><text x="1165" y="585" class="label">Filter Transactions</text>
+  <text x="535" y="725" class="label">Logout</text>
+</svg>

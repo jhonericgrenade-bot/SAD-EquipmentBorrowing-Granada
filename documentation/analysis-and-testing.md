@@ -63,7 +63,7 @@ The College currently records equipment borrowing manually, making it difficult 
 | TC-07 | Open a transaction with an old due date. | Transaction displays as Overdue. | Overdue status displayed. | PASS |
 | TC-08 | Search using a borrower name. | Matching transaction is displayed. | Matching record displayed. | PASS |
 | TC-09 | Filter transactions by Borrowed. | Only Borrowed transactions appear. | Filter worked. | PASS |
-| TC-10 | Open the GitHub Pages URL. | System is accessible online. | Complete after deployment. | PENDING |
+| TC-10 | Open the GitHub Pages URL. | System is accessible online. | GitHub Pages site opened successfully. | PASS |
 
 ## Explanation for Demonstration
 
@@ -72,3 +72,8 @@ The College currently records equipment borrowing manually, making it difficult 
 **Supabase query:** The application uses `supabase.from('equipment').select('*').order('asset_code')` to retrieve every equipment record, then displays the result in the Equipment table.
 
 **Return logic:** Clicking Return records today's date in `date_returned`, changes the transaction status to Returned, and changes the corresponding equipment availability to Available.
+
+## Submission Links
+
+- GitHub Repository: https://github.com/jhonericgrenade-bot/SAD-EquipmentBorrowing-Granada
+- Live System: https://jhonericgrenade-bot.github.io/SAD-EquipmentBorrowing-Granada/

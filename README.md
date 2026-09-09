@@ -25,6 +25,11 @@ An online system for recording College equipment, borrowing transactions, return
 - Overdue detection
 - Search and filtering
 
+## Project Links
+
+- Repository: https://github.com/jhonericgrenade-bot/SAD-EquipmentBorrowing-Granada
+- Live System: https://jhonericgrenade-bot.github.io/SAD-EquipmentBorrowing-Granada/
+
 ## Test Checklist
 
 | Test ID | Scenario | Expected Result | Result |
