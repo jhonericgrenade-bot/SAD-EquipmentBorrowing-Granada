@@ -47,12 +47,12 @@
         </section>
 
         <section id="equipment-view" class="view hidden">
-          <div class="toolbar"><input id="equipment-search" type="search" placeholder="Search equipment name or asset code" /><select id="equipment-filter"><option value="All">All availability</option><option value="Available">Available</option><option value="Borrowed">Borrowed</option></select><button id="add-equipment-button" class="button primary">Add equipment</button></div>
+          <div class="toolbar"><input id="equipment-search" type="search" aria-label="Search equipment" placeholder="Search equipment name or asset code" /><select id="equipment-filter" aria-label="Filter equipment by availability"><option value="All">All availability</option><option value="Available">Available</option><option value="Borrowed">Borrowed</option></select><button id="add-equipment-button" class="button primary">Add equipment</button></div>
           <div id="equipment-table" class="table-wrap"></div>
         </section>
 
         <section id="transactions-view" class="view hidden">
-          <div class="toolbar"><input id="transaction-search" type="search" placeholder="Search borrower, equipment, or asset code" /><select id="transaction-filter"><option value="All">All statuses</option><option value="Borrowed">Borrowed</option><option value="Returned">Returned</option><option value="Overdue">Overdue</option></select><button id="add-transaction-button" class="button primary">New borrowing</button></div>
+          <div class="toolbar"><input id="transaction-search" type="search" aria-label="Search transactions" placeholder="Search borrower, equipment, or asset code" /><select id="transaction-filter" aria-label="Filter transactions by status"><option value="All">All statuses</option><option value="Borrowed">Borrowed</option><option value="Returned">Returned</option><option value="Overdue">Overdue</option></select><button id="add-transaction-button" class="button primary">New borrowing</button></div>
           <div id="transaction-table" class="table-wrap"></div>
         </section>
       </main>
