@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Equipment Borrowing System Diagrams</title>
+  <style>
+    body{font-family:Arial,sans-serif;margin:32px;color:#172b3a;background:#f7fafc}.sheet{max-width:1050px;margin:0 auto 32px;padding:28px;background:#fff;border:1px solid #ccd8df}h1{font-size:22px;margin:0 0 22px}.usecase{display:grid;grid-template-columns:190px 1fr;gap:32px;align-items:center}.actor{text-align:center;font-weight:bold}.person{font-size:64px;line-height:1}.boundary{border:2px solid #31566b;padding:20px}.boundary h2{text-align:center;font-size:15px;margin:0 0 18px}.cases{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.case{border:1px solid #31566b;border-radius:50%;min-height:66px;display:grid;place-items:center;text-align:center;padding:8px;font-size:13px}.erd{display:grid;grid-template-columns:1fr 110px 1fr;align-items:center;gap:20px}.entity{border:2px solid #31566b}.entity h2{margin:0;padding:12px;background:#dceef4;font-size:16px;text-align:center}.entity ul{list-style:none;padding:10px 18px;margin:0;line-height:1.7;font-size:14px}.relation{text-align:center;font-size:15px;font-weight:bold}.relation .line{height:2px;background:#31566b;margin:8px 0}.note{color:#52616b;font-size:14px;line-height:1.5}@media(max-width:720px){.usecase{grid-template-columns:1fr}.cases{grid-template-columns:repeat(2,1fr)}.erd{grid-template-columns:1fr}.relation{display:flex;align-items:center;gap:8px;justify-content:center}.relation .line{width:50px;height:2px}}
+  </style>
+</head>
+<body>
+  <section class="sheet">
+    <h1>Use Case Diagram: Equipment Borrowing and Return Monitoring System</h1>
+    <div class="usecase">
+      <div class="actor"><div class="person">&#128100;</div>System User /<br>Equipment Custodian</div>
+      <div class="boundary"><h2>Equipment Borrowing and Return Monitoring System</h2><div class="cases"><div class="case">Login</div><div class="case">View Dashboard</div><div class="case">Add Equipment</div><div class="case">View Equipment</div><div class="case">Edit Equipment</div><div class="case">Delete Equipment</div><div class="case">Search Equipment</div><div class="case">Record Borrowing</div><div class="case">View Transactions</div><div class="case">Return Equipment</div><div class="case">Search Transactions</div><div class="case">Filter Transactions</div><div class="case">Logout</div></div></div>
+    </div>
+  </section>
+  <section class="sheet">
+    <h1>Entity Relationship Diagram</h1>
+    <div class="erd"><div class="entity"><h2>EQUIPMENT</h2><ul><li><b>PK</b> id</li><li>equipment_name</li><li>category</li><li>asset_code</li><li>condition</li><li>availability</li><li>created_at</li></ul></div><div class="relation">1<div class="line"></div>M<br><small>has</small></div><div class="entity"><h2>BORROW_TRANSACTIONS</h2><ul><li><b>PK</b> id</li><li><b>FK</b> equipment_id</li><li>borrower_name</li><li>borrower_type</li><li>department</li><li>date_borrowed</li><li>due_date</li><li>date_returned</li><li>status</li><li>user_id</li><li>created_at</li></ul></div></div>
+    <p class="note">One equipment item may have many borrowing transactions over time. Each borrowing transaction refers to one equipment item through <b>equipment_id</b>.</p>
+  </section>
+</body>
+</html>
